@@ -14,7 +14,7 @@ describe('accedo test', function() {
       .post('/login')
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
-      .send({'username': 'abdul', 'password': 'test@123'})
+      .send({'username': 'test', 'password': 'test@123'})
       .end(function(err, res){
         res.should.have.status(200);
         //res.should.be.json;

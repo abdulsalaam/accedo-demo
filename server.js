@@ -40,7 +40,7 @@ var password = 'accedoapp';
 
 var dbHost = 'localhost';
 var dbPort = '27017';
-var database = 'accedoapp';
+var database = 'accedo-demo';
 
 var url = 'mongodb://' + username + ':' + password + '@' + dbHost + ':' + dbPort + '/' + database;
 console.log('mongodb connection = ' + url);
