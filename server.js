@@ -36,11 +36,11 @@ app.use(passport.session());
 
 //Created from the command earlier. Ensure this is done on the first_db instance
 var username = 'admin';
-var password = 'accedoapp';
+var password = 'accedodemo';
 
 var dbHost = 'localhost';
 var dbPort = '27017';
-var database = 'accedo-demo';
+var database = 'accedodemo';
 
 var url = 'mongodb://' + username + ':' + password + '@' + dbHost + ':' + dbPort + '/' + database;
 console.log('mongodb connection = ' + url);
@@ -167,6 +167,7 @@ app.post('/register', function (req, res, next) {
             console.log(err);
             res.json({ message : err });
         } else {
+            //res.redirect('/home');
             res.json({ message : "User successfully registered!"});
         }
     });

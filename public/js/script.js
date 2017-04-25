@@ -11,7 +11,7 @@ function registerUser() {
         data: {
             username: username[0].value,
             password: password[0].value,
-            emailaddress: emailaddress[0].value
+           // emailaddress: emailaddress[0].value
         },
         success : function(response){
             window.location.assign("/");
