@@ -17,5 +17,16 @@
     "should": "^11.2.1",
     "superagent": "^3.5.2",
     "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.6",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   }
 }
