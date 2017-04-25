@@ -1,27 +1,31 @@
 var url = "http://localhost:8888";
 
 function registerUser() {
-    var username = document.getElementsByName("username");
-    var password = document.getElementsByName("password");
-    var emailaddress = document.getElementsByName("emailaddress");
+    var username = $("#username").val();
+    //alert(username);
+    var password = $("#password").val();
+    //var emailaddress = document.getElementsByName("emailaddress");
 
+    var formData = {
+            username: username,
+            password: password
+           // emailaddress: emailaddress[0].value
+        }
     $.ajax({
         url: url + "/register",
         method: "post",
-        data: {
-            username: username[0].value,
-            password: password[0].value,
-           // emailaddress: emailaddress[0].value
-        },
+        data: formData,
         success : function(response){
-            window.location.assign("/");
-            alert(response.message);
+            //window.location.assign("/");
+            //alert(response.message);
+            window.location.href = "/";
             
         },
         error: function(response) {
             alert(response.message);
         }
     });
+    formData = {};
 }
 
 function loginUser() {
@@ -43,7 +47,7 @@ function loginUser() {
         data: postData,
         success: function (data) {
             console.log('data:',data);
-            //window.location.href = "/home";
+            window.location.href = "/home";
             // do something with server response data
         },
         error: function (err) {
@@ -70,7 +74,7 @@ function getUser() {
     }
     });
 
-
+}
 
 function editItem(id) {
     var details = prompt("Please enter new details (" + id + ")", "");
@@ -151,7 +155,7 @@ function addMovie() {
         var item = response.entries[a];
         alert("Movie successfully added!");
         //Append the data in the table
-        $("#itemtable")..append("<tr>" + 
+        $("#itemtable").append("<tr>" + 
                     "<td>" + row + "</td>" +
                     "<td>" + item.title + "</td>" + 
                     "<td><a href='"+ item.contents[0].url  +"' target='_blank'>play</a></td>" +

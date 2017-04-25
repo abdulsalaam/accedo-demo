@@ -5,7 +5,7 @@ var bcrypt = require('bcrypt');
 // Thanks to http://blog.matoski.com/articles/jwt-express-node-mongoose/
  
 // set up a mongoose model
-var UserSchema = new Schema({
+/*var UserSchema = new Schema({
   username: {
         type: String,
         unique: true,
@@ -15,7 +15,20 @@ var UserSchema = new Schema({
         type: String,
         required: true
     }
-});
+});*/
+
+var UserSchema = new mongoose.Schema({
+    username:  {
+        type:String,
+        unique: true,
+        required: true,
+    },
+    password: {
+        type:String,
+        required: true,
+    }
+},{strict: true});
+
  
 UserSchema.pre('save', function (next) {
     var user = this;

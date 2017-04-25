@@ -71,7 +71,12 @@ Declare all models here
 */
 //var User = mongoose.model('user', UserSchema);
 var User        = require('./app/models/user'); // get the mongoose model
-
+User.ensureIndexes(function(err) {
+    if (err)
+        console.log(err);
+    else
+        console.log('create profile index successfully');
+});
 
 /***********
 All routes go below
@@ -157,7 +162,7 @@ passport.deserializeUser(function(user, done) {
   	});
 });
 
-
+/*
 app.post('/register', function (req, res, next) {
 	var password = bcrypt.hashSync(req.body.password);
 	req.body.password = password;
@@ -167,13 +172,33 @@ app.post('/register', function (req, res, next) {
             console.log(err);
             res.json({ message : err });
         } else {
-            //res.redirect('/home');
+
             res.json({ message : "User successfully registered!"});
+            //res.redirect('/login');
         }
     });
 	}
 });
+*/
 
+app.post('/register', function(req, res) {
+  if (!req.body.username || !req.body.password) {
+    res.json({success: false, msg: 'Please pass name and password.'});
+  } else {
+    var newUser = new User({
+      username: req.body.username,
+      password: req.body.password
+    });
+    // save the user
+    newUser.save(function(err) {
+      if (err) {
+       return res.json({ message : err });
+      }
+      res.redirect('/');
+      //return res.json({ message : "User successfully registered!"});
+    });
+  }
+});
 
 app.post('/changepassword', loggedIn, function (req, res, next) {
 	var oldpassword = req.body.oldpassword;
