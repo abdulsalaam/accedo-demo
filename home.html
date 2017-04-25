@@ -1,0 +1,32 @@
+<html>
+<html>
+    <head>
+    <title>Accedo App</title>
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/accedo.css">
+        <script src="/js/jquery-3.2.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/bootstrap-validation.js"></script>
+		<script src="/js/moment.min.js"></script>
+        <script src="/js/script.js"></script>
+    </head>
+    <body onload="getMovies()">
+        <p><a href="/home">Home</a></p>
+        <p>Hello <span class="username"></span>! </p>
+		<p><a href="/changepassword">Change Password</a> </p>
+        <p><a href="/logout">Logout</a> </p>
+		
+		<input type="text" name="searchText" id="searchText" size="100" value="" placeholder="Please enter title to search"/> <input type="button" onclick="getMoviesBySearch()" value="Go"/>
+		<table border="1px" width="100%" id="movietable">
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Move Url</th>
+				<th>Type</th>
+				<th>Available Date</th>
+                <th>Publish Date</th>
+            </tr>
+        </table>
+		
+    </body>
+</html>

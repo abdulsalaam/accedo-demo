@@ -1,0 +1,21 @@
+{
+  "name": "Accedo",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./server.js",
+    "test": "./node_modules/.bin/mocha --reporter spec --timeout 10000"
+  },
+  "author": "Abdul Salam",
+  "license": "ISC",
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "chai-http": "^3.0.0",
+    "grunt-apidoc": "^0.11.0",
+    "morgan": "^1.8.1",
+    "should": "^11.2.1",
+    "superagent": "^3.5.2",
+    "supertest": "^3.0.0"
+  }
+}
