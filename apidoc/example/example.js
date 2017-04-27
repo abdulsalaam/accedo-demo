@@ -34,44 +34,23 @@
  */
 function getUser() { return; }
 
-
 /**
- * @api {post} /login Login a User
+ * @api {post} /user Create a new User
  * @apiVersion 0.3.0
- * @apiName loginUser
+ * @apiName PostUser
  * @apiGroup User
  * @apiPermission none
  *
  * @apiDescription In this case "apiErrorStructure" is defined and used.
  * Define blocks with params that will be used in several functions, so you dont have to rewrite them.
  *
- * @apiParam {String} username Name of the User.
- * @apiParam {String} password Password of the User.
+ * @apiParam {String} name Name of the User.
  *
  * @apiSuccess {Number} id         The new Users-ID.
  *
  * @apiUse CreateUserError
  */
-function loginUser() { return; }
-
-/**
- * @api {post} /register Register a New User
- * @apiVersion 0.3.0
- * @apiName registerUser
- * @apiGroup User
- * @apiPermission none
- *
- * @apiDescription In this case "apiErrorStructure" is defined and used.
- * Define blocks with params that will be used in several functions, so you dont have to rewrite them.
- *
- * @apiParam {String} username Name of the User.
- * @apiParam {String} password Password of the User.
- *
- * @apiSuccess {Number} id         The new Users-ID.
- *
- * @apiUse CreateUserError
- */
-function registerUser() { return; }
+function postUser() { return; }
 
 /**
  * @api {put} /user/:id Change a User
@@ -83,7 +62,8 @@ function registerUser() { return; }
  * @apiDescription This function has same errors like POST /user, but errors not defined again, they were included with "apiErrorStructure"
  *
  * @apiParam {String} name Name of the User.
- * @apiParam {String} password Password of the User.
+ *
+ * @apiSuccess {Number}   id            The Users-ID.
  *
  * @apiUse CreateUserError
  */

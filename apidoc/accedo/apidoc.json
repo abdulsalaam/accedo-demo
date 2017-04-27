@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "apidoc for video-on-demand",
   "title": "Custom apiDoc browser title",
-  "url" : "https://api.github.com/v1",
-  "sampleUrl": "https://api.github.com/v1",
+  "url" : "http://localhost:8888",
+  "sampleUrl": "http://localhost:8888",
   "header": {
     "title": "Accedo : video on demand demo",
     "filename": "header.md"
